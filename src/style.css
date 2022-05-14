@@ -1,0 +1,493 @@
+/* 
+Posicionamiento --> static, absolute, relative, fixed
+Modelo de caja (Box model) --> margin, border, padding, content
+Tipografía --> tipos, tamaños de fuente, etc
+Estilos visuales --> box-shadow, border-radius, gradient, etc
+Otros --> reglas CSS y más
+*/
+
+:root {
+    --DM-Sans: 'DM Sans', sans-serif;
+    --Inter: 'Inter', sans-serif;
+    --black-Background: #201E1C;
+    --warm-black1: #282623;
+    --grey: #BABABA;
+    --orange-Background: #F7931A;
+    --soft-orange: #FFE9D4;
+    --white-Background: #E5E5E5;
+    --papa-color: #FFD064;
+    --select-button-color: #FAF8F7;
+    --secondary-blue: #1A9AF7;
+    --soft-blue : #E7F5FF;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: var(--DM-Sans);
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--white-Background);
+    width: 100%;
+}
+
+/* --> Header */
+
+header {
+    width: 100%;
+    min-width: 320px;
+    height: 32rem;
+    background: linear-gradient(207.8deg, var(--black-Background) 16.69%, var(--orange-Background) 100%);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 4rem;
+}
+
+header img {
+    width: 50vw;
+    margin-bottom: 3rem;
+}
+
+h1 {
+    color: white;
+    margin-bottom: 2rem;
+    font-size: 2.4rem;
+    line-height: 2.6rem;
+}
+
+header p {
+    font-size: 1.4rem;
+    color: var(--soft-orange);
+    line-height: 1.8rem;;
+}
+
+.header-container a {
+    position: absolute;
+    display: block;
+    font-size: 1.4rem;
+    line-height: 1.8rem;;
+    list-style: none;
+    background-color: var(--select-button-color);
+    color: var(--black-Background);
+    width: 230px;
+    height: 48px;
+    top: 29.7rem;
+    left: calc(50% - 115px);
+    border-radius: .5rem;
+    box-shadow: 0px 4px 8px rgba(89, 73, 30, 0.16);
+    text-decoration: none;
+    padding: 12px 16px;
+}
+
+.arrow-icon {
+    display: inline-block;
+    width: 1.4rem;
+    height: .8rem;
+    margin-left: .4rem;
+    background-image: url('../assets/icons/down-arrow.svg');
+}
+
+/* --> Aqui empiezan las secciones
+
+--> Primera seccion */
+
+.section1 {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+.bitcoin-img {
+    width: 19.5rem;
+    height: 19.5rem;
+    margin: 3rem auto 3rem auto;
+}
+
+.bitcoin-img img {
+    object-fit: cover;
+}
+
+.title-seccion{
+    width: 28.8rem;
+    height: auto;
+    text-align: center;
+    margin: 0 auto;
+    position: relative;
+}
+
+.container-products h2 {
+    font-size: 2.4rem;
+    line-height: 2.6rem;
+}
+
+.container-products p{
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    margin-top: 2.4rem;
+}
+
+.container-table {
+    display: flex;
+    flex-direction: row;
+    height: 342px;
+    width: 100%;
+    gap: 10rem;
+    max-width: 800px;
+    overflow-x: scroll;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: proximity;
+    margin: 0 auto;
+    padding: 0 6rem;
+}
+/* Primer tabla */ 
+.table {
+    display: grid;
+    width: 23.5rem;
+    grid-template-columns: repeat(2, 10.1rem);
+    grid-template-rows: repeat(5 , 3.9rem) ;
+    justify-content: center;
+    scroll-snap-align: center;
+    color: var(--grey);
+    font-size: 1.6rem;
+    gap: 1px;
+    position: relative;
+    margin: 4.8rem auto 64px auto;
+}
+
+.table div {
+    padding: 10px 12px;
+    background-color: white;
+}
+
+.table div:first-child , .table div:nth-child(2) { 
+    background-color: var(--white-Background);
+    padding: 0;
+    margin: auto 0 12px 10px ;
+}
+
+/* Bordes redondeados tabla */
+
+.table div:nth-child(3) {
+    border-radius: .8rem 0 0 0;
+}
+
+.table div:nth-child(4) {
+    border-radius: 0 .8rem 0 0;
+}
+
+.table div:nth-child(9) {
+    border-radius: .0 0 0 .8rem;
+}
+
+.table div:nth-child(10) {
+    border-radius: 0 0 .8rem 0;
+}
+ 
+.coins h3 {
+    color: var(--orange-Background);
+    font-size: 1.8rem;
+}
+
+.comision h3 {
+    color: var(--secondary-blue);
+    font-size: 1.8rem;
+}
+.cambio {
+    color: #757575;
+}
+
+.trending-up {
+    display: inline-block;
+    width: 1.4rem;
+    height: 1rem;
+    margin-left: .4rem;
+    background-image: url('../assets/icons/trending-up.svg');
+    background-repeat: no-repeat;
+}
+
+.trending-down {
+    display: inline-block;
+    width: 1.4rem;
+    height: 1rem;
+    margin-left: .4rem;
+    background-image: url('../assets/icons/trending-down.svg');
+    background-repeat: no-repeat;
+}
+
+.rigth-arrow {
+    position: absolute;
+    width: 1.4rem;
+    height: .8rem;
+    margin-left: 22rem;
+    margin-top: -8.5rem;
+    transform: rotate(-90deg);
+}
+
+.comision .rigth-arrow {
+    margin-left: -3rem;
+    transform: rotate(90deg);
+}
+
+.update {
+    display: flex;
+    width: 19rem;
+    height: 3.1rem;
+    background-color: var(--soft-orange);
+    text-align: center;
+    font-size: 1.4rem;
+    top: 21.5rem;
+    left: .7rem;
+    justify-content: center;
+    align-items: center;
+    border-radius: .8rem;
+    color: var(--black-Background);
+    position: absolute;
+}
+
+.comision-date{
+    background-color: var(--soft-blue);
+}
+
+/* Aqui termina la primera y 
+
+--> empieza la segunda seccion */
+
+.section2 {
+    display: flex;
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    background-color: var(--black-Background);
+    color: white;
+    gap: 16px;
+    place-content: center;
+    align-content: center;
+}
+
+.charateristics {
+    width: 90%;
+    max-width: 800px;
+    height: 15.2rem;
+    background-color: var(--warm-black1);
+    margin: 0 auto;
+    border-radius: .8rem;
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    padding: 16px;
+}
+
+.charateristics img {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.charateristics h3 {
+    font-size: 1.8rem;
+    margin-top: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+main section:nth-child(2) .title-seccion{
+    position: relative;
+    background-color: transparent;
+}
+
+.title-seccion .batata{
+    position: absolute;
+    top: -1.2rem;
+    left: calc(50% - (3.745rem/2));
+    width: 3.745rem;
+    height: 2.4rem;
+}
+
+main section:nth-child(2) .title-seccion h2{
+    font-size: 2.4rem;
+    line-height: 2.6rem;
+    margin-top: 2.5rem;
+}
+
+main section:nth-child(2) .title-seccion p{
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    margin-top: 2.4rem;
+    color: var(--grey);
+}
+
+section div:last-child {
+    margin-bottom: 46px;
+}
+
+/* Aqui termina la segunda sección
+
+--> Empieza la tercera */
+.pintatewe {
+    background: linear-gradient(90deg, #D6893D, #C67C32) ;
+}
+
+.bitcoin-img-container {
+    background-image: url("../assets/img/bitcoinbaby2x.png");
+    height: 51.6rem;
+    width: 100%;
+    max-width: 800px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin: 0 auto;
+}
+
+.bitcoin-img-container h2 {
+    padding-top: 10rem;
+    text-align: center;
+    font-weight: 700;
+    font-size: 2.4rem;
+    color: white;
+}
+
+/* Termina la tercera seccion 
+
+--> Empieza la cuarta, para el titulo se utilizan estilos title-seccion > */
+
+.container-product {
+    display: flex;
+    height: auto;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 4rem;
+    gap: 16px;
+    overflow-x: scroll;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+}
+
+.planes {
+    display: flex;
+    flex-direction: column;
+    width: 190px;
+    min-width: 190px;
+    height: 247px;
+    scroll-snap-align: center;
+    background-color: white;
+    margin-top: 50px;
+    text-align: center;
+    justify-content: center;
+    border-radius: .8rem;
+    position: relative;
+    padding: 16px;
+    box-shadow: 6px 4px 12px  var(--grey);
+    transition: .3s;
+}
+
+.planes:hover {
+    transform: scale(1.1);
+    transition: .3s;
+}
+
+.planes h3 {
+    font-weight: 500;
+    font-size: 1.4rem;
+}
+
+.planes p {
+    font-size: 1.2rem;
+    color: var(--grey);
+    margin-bottom: 16px;
+}
+
+.price span {
+    position: absolute;
+    font-size: 1.2rem;
+    margin-left: -1rem;
+    margin-top: 1.2rem;
+}
+
+.planes .price {
+    font-weight: 700;
+    font-size: 5.2rem;
+    letter-spacing: -0.6rem;
+    color: var(--black-Background);
+}
+
+.select {
+    border: 2px solid var(--orange-Background);
+    background-color: var(--soft-orange);
+    height: 48px;
+    font-weight: 700;
+    font-size: 1.4rem;
+    text-decoration: none;
+    align-items: center;
+    padding: 12px;
+    color: var(--black-Background);
+}
+
+.select span {
+    display: inline-block;
+    width: 2rem;
+    height: 1.6rem;
+    margin-left: .6rem;
+    background-image: url("../assets/icons/orange-right-arrow.svg");
+    background-size: cover;
+}
+
+.prefer {
+    position: absolute;
+    width: 10.1rem;
+    height: 3rem;
+    background: var(--orange-Background);
+    top: -1.5rem;
+    left: calc( 50% - 5.05rem);
+    border-radius: .8rem;
+    color: var(--white-Background);
+    padding: 8px;
+}
+
+/* fin de las seccion 4
+
+--> footer */
+
+footer {
+    width: 100%;
+    height: 15rem;
+    background-color: var(--orange-Background);
+    display: grid;
+    grid-template-rows: repeat(3, 20px );
+    grid-template-columns: repeat(2, 110px) ;
+    grid-template-areas: "link logoF"
+                         "link logoF"
+                         "link logoF";
+    place-content: center;
+    color: white;
+}
+
+.link {
+    font-size: 1.4rem;
+    grid-column-start: link;
+    grid-column-end: link;
+}
+
+.logoF {
+    width: 7rem;
+    height: 7rem;
+    align-self: baseline;
+    grid-column-start: logoF;
+    grid-row-start: logoF;
+}
+
+@media (min-width: 615px) {
+    .container-product {
+        justify-content: center;
+    }
+}
