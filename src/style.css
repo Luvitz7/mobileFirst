@@ -469,11 +469,12 @@ footer {
                          "link logoF"
                          "link logoF";
     place-content: center;
-    color: white;
 }
 
 .link {
     font-size: 1.4rem;
+    text-decoration: none;
+    color: white;
     grid-column-start: link;
     grid-column-end: link;
 }
@@ -489,5 +490,10 @@ footer {
 @media (min-width: 615px) {
     .container-product {
         justify-content: center;
+        overflow-x: hidden;
+    }
+
+    .container-table {
+        overflow-x: hidden;
     }
 }
